@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'asserts/css/filtered_items.css' %}">
+{% endblock style %}
+    
+
+    {% block content %}
+    
+
+            <div class="container">
+                <div class="site-direction">
+                    Home <span> > </span> <div class="site-direction__character"> 
+                        Filtered items</div>
+                </div>
+                <div class="right__filterd-product-advise-area">
+                    {% for message in messages %}
+                        <div style="text-align: center;margin-top:12vh; margin-bottom:12vh;color:#c00;font-size:1.5rem; font-weight:bold">{{ message }}</div>
+                    {% endfor %}
+                    <div class="filtered-products">
+                        {% for product in product %}
+                            <div class="filtered-product">
+                                <div class="filtered-product-image">
+                                    <img src="{{ product.image.url }}" alt=" Product">
+                                </div>
+                                <div class="filtered-product-informations">
+                                    <div class="filtered-product-name">
+                                        {{ product.name }}
+                                    </div>
+                                    <div class="filtered-product-characteristics">
+                                        {{ product.characters }}
+                                    </div>
+                                    <div class="filtered-product-price">
+                                        {{ product.price }} $
+                                    </div>
+                                </div>
+                                <div class="filtered-product__add-cart">
+                                    <a href="">Add to cart</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+    
+    {% endblock content %}

@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Market</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/loader.css' %}">
+    <script src="{% static 'asserts/js/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'asserts/js/loader.js' %}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+    {% block style %}
+    {% endblock style %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+        
+<body>
+
+    <div class="preload_page">
+        <div class="preload_ring">
+            <div class="preload-company__logo">
+                <img src="{{logo.logo.url}}" alt=" ">
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-company__logo">
+            <img src="{% static 'asserts/images/logo/logo.png' %}" alt="">
+        </div>
+        <div class="header-company__informations">
+            <div class="header-company__gmail">
+                Our gmail <br>
+                sale@pcmarket.uz
+            </div>
+            <div class="header-company__phone">
+                Phone number <br>
+                +99899 301-31-00
+            </div>
+            <div class="header-company__time">
+                Work time <br>
+                Пн-Сб 9.00 - 18.00
+            </div>
+            <div class="header-social__items">
+                <div class="header-social__item">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <div class="header-social__item">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="header-social__item">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+            </div>
+
+            <div class="right-header__actions-mobile">
+                <div class="right-header__bars-mobile">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="right-header__cart-mobile">
+                    <a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="shopping-cart__number">0</span>
+                </div>
+                <div class="right-header__search-mobile">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="header-mobile">
+                <div class="left-nav__items-mobile">
+                    <div class="left-nav__line-mobile">
+                        <i class="fas fa-grip-lines"></i>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/tower.png' %}" alt="Image"><span class="left-nav__item-title"> Computers</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/laptop.png' %}" alt="Image"><span class="left-nav__item-title"> Laptops</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/printer-36x36' %}.png" alt="Image"><span class="left-nav__item-title"> Printers</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/Computer.png' %}" alt="Image"><span class="left-nav__item-title"> Monoblocks</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/monitor.png' %}" alt="Image"><span class="left-nav__item-title"> Monitors</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/mouse.png' %}" alt="Image"><span class="left-nav__item-title"> PC Peripherals</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/ram.png' %}" alt="Image"><span class="left-nav__item-title"> Accessories</span></a>
+                    </div>
+                    <div class="left-nav__item-mobile">
+                        <a href=""><img src="{% static 'asserts/images/icons/antique.png' %}" alt="Image"><span class="left-nav__item-title"> Gaming chairs</span></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>  
+
+
+
+
+
+    <div class="header-left">
+        <div class="left-nav__items">
+            {% for cat in categories  %}
+                <div class="left-nav__item">
+                    <a href="{% url 'category' cat.id  %}"><img src="{{ cat.icon.url }}" alt="Image"><span class="left-nav__item-title"> {{ cat.name }}</span></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-right">
+            <div class="right-header">
+                <div class="right-header__items">
+                    <div class="right-header__item">
+                        Home
+                    </div>
+                    <div class="right-header__item">
+                        Contacts
+                    </div>
+                    <div class="right-header__actions">
+                        <div class="right-header__cart">
+                            <a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i></a>
+                            <span class="shopping-cart__number">0</span>
+                        </div>
+                        <div class="right-header__search">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    {% block content %}
+        
+
+
+
+
+    
+
+        
+    {% endblock content %}
+    
+
+
+
+
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-company__logo">
+            <img src="{% static 'asserts/images/logo/logo.png' %}" alt="">
+        </div>
+        <div class="footer-social__items">
+            <div class="footer-social__item">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            <div class="footer-social__item">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="footer-social__item">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+        </div>
+        <div class="footer-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quod?
+        </div>
+    </footer>
+</div>
+<script src="{% static 'asserts/js/script.js' %}"></script>
+<script src="{% static 'asserts/js/slides.js' %}"></script>
+<script>
+    $link = $('.header-mobile')
+    $navs = $('.right-header__bars-mobile')
+    $navs1 = $('.left-nav__line-mobile')
+    $link.hide()
+    $navs.on('click', function() {
+        $link.show(500)
+        $navs.hide()
+    })
+
+    $navs1.on('click', function() {
+    $link.hide(500)
+    $navs.show()
+})
+</script>
+</body>
+</html>

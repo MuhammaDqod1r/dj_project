@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'asserts/css/qrcodes.css' %}">
+    <title>QRcodes</title>
+</head>
+<body>
+    <div class="qrcode-main__title">
+        Products
+    </div>
+    <div class="container">
+        <div class="qrcodes">
+            {% for product in products %}
+                <div class="qrcode">
+                    <div class="qrcode-image">
+                        <img src="../media/pr_qrcodes/{{product.id}}.jpg" alt="">
+                    </div>
+                    <div class="qrcode-title">
+                        {{ product.name }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="qrcode-main__title">
+        Discount Products
+    </div>
+    <div class="container">
+        <div class="qrcodes">
+            {% for d_product in d_products %}
+                <div class="qrcode">
+                    <div class="qrcode-image">
+                        <img src="../media/d_pr_qrcodes/{{d_product.id}}.jpg" alt=" ">
+                    </div>
+                    <div class="qrcode-title">
+                        {{ d_product.name }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

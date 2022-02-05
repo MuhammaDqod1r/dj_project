@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block style %}
+        <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/product-single.css' %}">
+    {% endblock style %}
+    
+
+    {% block content %}
+    
+    
+            <div class="container">
+                <div class="site-direction">
+                    Home <span> > </span> Laptops <span> > </span> <div class="site-direction__character"> 
+                        {{ product.name }}  {{ product.characters }} </div>
+                </div>
+
+                <div class="product-single__place">
+                    <div class="product-single__image">
+                        <img src="{{ product.image.url }}" alt=" Laptop">
+                    </div>
+                    <div class="product-single__characteristics">
+                        <div class="product-single__name">
+                            {{ product.name }}
+                        </div>
+                        <div class="product-single__characters">
+                            {{ product.characters }}
+                        </div>
+                        <div class="product-single__price">
+                            Цена  {{ product.price }} $
+                        </div>
+                        <div class="product-single__input-cart">
+                            <input type="number" min="1"  name="" id="">
+                            <a href="" class="product-single__add-cart">Add to cart</a>
+                        </div>
+                        <div class="product-single__category">
+                            Категория: <span>Laptops</span>
+                        </div>
+                        <div class="product-single__warranty">
+                            Warranty 1 year
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-title1">
+                    <div class="main-title" style="margin-left: -2rem;">
+                        Similar products
+                        <div class="main-title__underline">
+                            <div class="main-title__underline-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="products">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-swiper-autoplay="6000">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{% static 'asserts/images/products/laptop/2.webp' %}" alt=" Product">
+                                    </div>
+                                    <div class="product-informations">
+                                        <div class="product-name">
+                                            Gaming Laptop
+                                        </div>
+                                        <div class="product-characteristics">
+                                            i3-10100F OZU 8GB 2GB GeForce GTX 1050 | SSD 128GB
+                                        </div>
+                                        <div class="product-price">
+                                            500 $
+                                        </div>
+                                    </div>
+                                    <div class="product__add-cart">
+                                        <a href="">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-autoplay="6000">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{% static 'asserts/images/products/laptop/3.webp' %}" alt=" Product">
+                                    </div>
+                                    <div class="product-informations">
+                                        <div class="product-name">
+                                            Gaming Laptop
+                                        </div>
+                                        <div class="product-characteristics">
+                                            i3-10100F OZU 8GB 2GB GeForce GTX 1050 | SSD 128GB
+                                        </div>
+                                        <div class="product-price">
+                                            500 $
+                                        </div>
+                                    </div>
+                                    <div class="product__add-cart">
+                                        <a href="">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-autoplay="6000">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{% static 'asserts/images/products/laptop/4.webp' %}" alt=" Product">
+                                    </div>
+                                    <div class="product-informations">
+                                        <div class="product-name">
+                                            Gaming Laptop
+                                        </div>
+                                        <div class="product-characteristics">
+                                            i3-10100F OZU 8GB 2GB GeForce GTX 1050 | SSD 128GB
+                                        </div>
+                                        <div class="product-price">
+                                            500 $
+                                        </div>
+                                    </div>
+                                    <div class="product__add-cart">
+                                        <a href="">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-autoplay="6000">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{% static 'asserts/images/products/laptop/5.webp' %}" alt=" Product">
+                                    </div>
+                                    <div class="product-informations">
+                                        <div class="product-name">
+                                            Gaming Laptop
+                                        </div>
+                                        <div class="product-characteristics">
+                                            i3-10100F OZU 8GB 2GB GeForce GTX 1050 | SSD 128GB
+                                        </div>
+                                        <div class="product-price">
+                                            500 $
+                                        </div>
+                                    </div>
+                                    <div class="product__add-cart">
+                                        <a href="">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-autoplay="6000">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{% static 'asserts/images/products/laptop/6.webp' %}" alt=" Product">
+                                    </div>
+                                    <div class="product-informations">
+                                        <div class="product-name">
+                                            Gaming Laptop
+                                        </div>
+                                        <div class="product-characteristics">
+                                            i3-10100F OZU 8GB 2GB GeForce GTX 1050 | SSD 128GB
+                                        </div>
+                                        <div class="product-price">
+                                            500 $
+                                        </div>
+                                    </div>
+                                    <div class="product__add-cart">
+                                        <a href="">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+    
+    {% block script %}
+        <script src="{% static 'asserts/js/product-single-slider.js' %}"></script>
+    {% endblock script %}
+        
+    {% endblock content %}

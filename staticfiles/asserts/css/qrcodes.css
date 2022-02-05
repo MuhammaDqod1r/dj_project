@@ -1,0 +1,46 @@
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+
+}
+
+
+.qrcode-main__title {
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.qrcodes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.qrcode {
+    width: 14rem;
+    margin-bottom: 2rem;
+}
+
+
+.qrcode-image img {
+    width: 100%;
+}
+
+
+.qrcode-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: -1rem;
+}

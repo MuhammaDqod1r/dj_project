@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/cart.css' %}">
+{% endblock style %}
+    
+
+{% block content %}
+    
+    
+
+
+        <div class="container">
+
+            <div class="site-direction">
+                Home <span> > </span> <div class="site-direction__character"> 
+                    Cart</div>
+            </div>
+
+            <table class="cart-table">
+                <thead class="cart-thead">
+                    <tr>
+                        <th></th>
+                        <th class="product-table__img"></th>
+                        <th>Product</th>
+                        <th class="product-table__prc">Price</th>
+                        <th>Value</th>
+                        <th>Total price</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-tbody">
+                    <tr>
+                        <td data-label="" >
+                            <div class="product-table__delete-item">
+                                <a href=""><i class="fas fa-times"></i></a>
+                            </div>
+                        </td>
+                        <td data-label="" class="product-table__img">
+                            <div class="product-table__image">
+                                <img src="./asserts/images/products/laptop/2.jpg" alt="">
+                            </div>
+                        </td>
+                        <td data-label="Product:">
+                            <a href="">
+                                <div class="product-table__name">
+                                    Lenovo V14
+                                </div>
+                                <div class="product-table__characteristics">
+                                    N4020/RAM:4 Gb/HDD:1000 Gb/VGA: UHD/14
+                                </div>
+                            </a>
+                        </td>
+                        <td data-label="Price:" class="product-table__prc">
+                            <div class="product-table__price">
+                                3,500,000
+                            </div>
+                        </td>
+                        <td data-label="Number:">
+                            <div class="product-table__number">
+                                <input value="1" type="number" name="" id="">
+                            </div>
+                        </td>
+                        <td data-label="Total price:">
+                            <div class="product-table__total">
+                                3,500,000
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="" >
+                            <div class="product-table__delete-item">
+                                <a href=""><i class="fas fa-times"></i></a>
+                            </div>
+                        </td>
+                        <td data-label="" class="product-table__img">
+                            <div class="product-table__image">
+                                <img src="./asserts/images/products/laptop/2.jpg" alt="">
+                            </div>
+                        </td>
+                        <td data-label="Product:">
+                            <a href="">
+                                <div class="product-table__name">
+                                    Lenovo V14
+                                </div>
+                                <div class="product-table__characteristics">
+                                    N4020/RAM:4 Gb/HDD:1000 Gb/VGA: UHD/14
+                                </div>
+                            </a>
+                        </td>
+                        <td data-label="Price:" class="product-table__prc">
+                            <div class="product-table__price">
+                                3,500,000
+                            </div>
+                        </td>
+                        <td data-label="Number:">
+                            <div class="product-table__number">
+                                <input value="1" type="number" name="" id="">
+                            </div>
+                        </td>
+                        <td data-label="Total price:">
+                            <div class="product-table__total">
+                                3,500,000
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="" >
+                            <div class="product-table__delete-item">
+                                <a href=""><i class="fas fa-times"></i></a>
+                            </div>
+                        </td>
+                        <td data-label="" class="product-table__img">
+                            <div class="product-table__image">
+                                <img src="./asserts/images/products/laptop/2.jpg" alt="">
+                            </div>
+                        </td>
+                        <td data-label="Product:">
+                            <a href="">
+                                <div class="product-table__name">
+                                    Lenovo V14
+                                </div>
+                                <div class="product-table__characteristics">
+                                    N4020/RAM:4 Gb/HDD:1000 Gb/VGA: UHD/14
+                                </div>
+                            </a>
+                        </td>
+                        <td data-label="Price:" class="product-table__prc">
+                            <div class="product-table__price">
+                                3,500,000
+                            </div>
+                        </td>
+                        <td data-label="Number:">
+                            <div class="product-table__number">
+                                <input value="1" type="number" name="" id="">
+                            </div>
+                        </td>
+                        <td data-label="Total price:">
+                            <div class="product-table__total">
+                                3,500,000
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/index.css' %}">
+{% endblock style %}
+    
+
+
+{% block content %}
+    
+
+
+
+            <!-- Slider -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {% for s_image in s_image %}
+                        <div class="swiper-slide" data-swiper-autoplay="6000">
+                            <div class="banner-right__slides">
+                                <div class="banner-right__slide-item">
+                                    <img src="{{ s_image.image.url }}" alt=" ">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                  <!-- <div class="swiper-slide" data-swiper-autoplay="6000">
+                    <div class="banner-right__slides">
+                        <div class="banner-right__slide-item">
+                            <img src="{% static 'asserts/images/slide_images/slide_2.webp' %}" alt="">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" data-swiper-autoplay="6000">
+                    <div class="banner-right__slides">
+                        <div class="banner-right__slide-item">
+                            <img src="{% static 'asserts/images/slide_images/slide_3.webp' %}" alt="">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" data-swiper-autoplay="6000">
+                    <div class="banner-right__slides">
+                        <div class="banner-right__slide-item">
+                            <img src="{% static 'asserts/images/slide_images/slide_4.webp' %}" alt="">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" data-swiper-autoplay="6000">
+                    <div class="banner-right__slides">
+                        <div class="banner-right__slide-item">
+                            <img src="{% static 'asserts/images/slide_images/slide_5.webp' %}" alt="">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" data-swiper-autoplay="6000">
+                    <div class="banner-right__slides">
+                        <div class="banner-right__slide-item">
+                            <img src="{% static 'asserts/images/slide_images/slide_6.webp' %}" alt="">
+                        </div>
+                    </div>
+                  </div> -->
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="container">
+                <div class="right-category__items">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for cat in categories %}
+                                <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="right-category__item">
+                                        <div class="right-category__image">
+                                            <img src="{{ cat.image.url }}" alt="">
+                                        </div>
+                                        <div class="right-category__name">
+                                            <a  href="{% url 'category' cat.id %}">{{ cat.name }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-title1">
+                <div class="main-title">
+                    Goods in the discount
+                    <div class="main-title__underline">
+                        <div class="main-title__underline-left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="right__product-discount-area">
+                    <div class="products">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {% for d_product in product_discount %}
+                                    <div class="swiper-slide" data-swiper-autoplay="6000">
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <img src="{{ d_product.image.url }}" alt=" Product">
+                                                <div class="product-discount">
+                                                    -{{ d_product.discount }}
+                                                </div>
+                                            </div>
+                                            <div class="product-informations">
+                                                <div class="product-name">
+                                                    <a href="{% url 'product_single_discount' pk=d_product.id %}">{{ d_product.name }}</a>
+                                                </div>
+                                                <div class="product-characteristics">
+                                                    <a href="{% url 'product_single_discount' pk=d_product.id %}">{{ d_product.characters }}</a>
+                                                </div>
+                                                <div class="product-price">
+                                                    <a href="{% url 'product_single_discount' pk=d_product.id %}">{{ d_product.price }} $</a>
+                                                </div>
+                                            </div>
+                                            <div class="product__add-cart">
+                                                <a href="">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-title1">
+                <div class="main-title">
+                    Goods we recommend you
+                    <div class="main-title__underline">
+                        <div class="main-title__underline-left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="right__product-advise-area">
+                    <div class="products">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {% for product in products %}
+                                    <div class="swiper-slide" data-swiper-autoplay="6000">
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <img src="{{ product.image.url }}" alt=" Product">
+                                            </div>
+                                            <div class="product-informations">
+                                                <div class="product-name">
+                                                    <a href="{% url 'product_single' pk=product.id %}">{{ product.name }}</a>
+                                                </div>
+                                                <div class="product-characteristics">
+                                                    <a href="{% url 'product_single' pk=product.id %}">{{ product.characters }}</a>
+                                                </div>
+                                                <div class="product-price">
+                                                    <a href="{% url 'product_single' pk=product.id %}">{{ product.price }} $</a>
+                                                </div>
+                                            </div>
+                                            <div class="product__add-cart">
+                                                <a href="">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-title1">
+                <div class="main-title">
+                    Our Brands
+                    <div class="main-title__underline">
+                        <div class="main-title__underline-left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="conainer">
+                <div class="right__product-brand-area">
+                    <div class="main-brands">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {% for brand in our_brands %}
+                                    <div class="swiper-slide" data-swiper-autoplay="6000">
+                                        <div class="main-brand__image">
+                                            <img src="{{brand.image.url}}" alt="Partner">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <!-- <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="main-brand__image">
+                                        <img src="{% static 'asserts/images/partners/2.webp' %}" alt="Partner">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="main-brand__image">
+                                        <img src="{% static 'asserts/images/partners/3.webp' %}" alt="Partner">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="main-brand__image">
+                                        <img src="{% static 'asserts/images/partners/4.webp' %}" alt="Partner">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="main-brand__image">
+                                        <img src="{% static 'asserts/images/partners/5.webp' %}" alt="Partner">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-autoplay="6000">
+                                    <div class="main-brand__image">
+                                        <img src="{% static 'asserts/images/partners/6.webp' %}" alt="Partner">
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock content %}
+  

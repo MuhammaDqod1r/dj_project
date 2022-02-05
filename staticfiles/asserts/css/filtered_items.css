@@ -1,0 +1,184 @@
+.container {
+    
+    width: 98%;
+    margin:  0 auto;
+    padding: 0 2rem;
+    max-width: 98%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Products in discount */
+
+
+.filtered-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 0 8rem 0;
+}
+
+
+.filtered-product {
+    background-color: #1a191f;
+    width: 94%;
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.5s;
+    position: relative;
+    transition: 0.4s;
+    margin: 0.6rem;
+    flex-basis: 20%;
+    flex-grow: 1;
+    max-width: 24%;
+}
+
+
+
+
+.filtered-product:hover {
+    background-color: #27262C;
+}
+
+
+
+.filtered-product-image {
+    height: 13vw;
+    min-height: 8rem;
+
+}
+
+
+.filtered-product-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+
+
+.filtered-product-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    letter-spacing: 2px;
+    background-color: #a00;
+    padding: 2px 6px;
+}
+
+.filtered-product-informations {
+    padding: 1rem 0;
+}
+
+.filtered-product-name {
+    text-align: left;
+    padding: 5px 0;
+    margin-bottom: 1rem;
+}
+
+
+
+
+.filtered-product-characteristics {
+    text-align: left;
+    color: #f90607;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.filtered-product-price {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.filtered-product__add-cart {
+    background-color: #d21e24;
+    padding: 0.7rem 1rem;
+    width: 7rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    transition: 0.5s;
+    margin-left: auto;
+}
+
+.filtered-product__add-cart:hover {
+    background-color: #791115;
+}
+
+
+.filtered-product__add-cart a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 992px) {
+
+
+    .filtered-product-image {
+        height: 30vw;
+    }
+
+
+    .filtered-product {
+        flex-basis: 40%;
+    } 
+
+}
+
+
+@media only screen and (max-width: 660px) {
+
+    .container {
+        padding: 0 0.5rem;
+    }
+
+
+
+    .filtered-products {
+        margin: 0 0 3rem 0;
+    }
+
+    .filtered-product-image {
+        height: 60vw;
+    }
+
+
+    .filtered-product {
+        flex-basis: 100%;
+    } 
+}
+
+@media only screen and (max-width: 440px) {
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    
+    .filtered-product__add-cart {
+        padding: 0.7rem 1rem;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+    }
+
+    
+}
+
+
